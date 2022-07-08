@@ -12,7 +12,7 @@ jobs:
     name: Test github nodejs actions
     steps:
       - name: Annotate PR
-        uses: link-/Artiness.GitHubNodeJsActions@main
+        uses: link-/Brianenno/Artiness.GitHubNodeJsActions@main
         with:
           owner: ${{ github.repository_owner }}
           repo: ${{ github.event.repository.name }}
