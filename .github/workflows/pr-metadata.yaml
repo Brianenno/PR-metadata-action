@@ -10,6 +10,7 @@ jobs:
   annotate-pr:
     runs-on: ubuntu-latest
     name: Test github nodejs actions
+    steps:
       - name: Annotate PR
         uses: link-/Artiness.GitHubNodeJsActions@main
         with:
