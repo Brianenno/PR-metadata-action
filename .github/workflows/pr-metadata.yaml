@@ -24,10 +24,18 @@ jobs:
         run: cd ..
           
       - name: Print directory content
-        run: ls
+        run: |
+            yourfilenames=`ls ./*`
+            for eachfile in $yourfilenames
+            do
+               echo $eachfile
+            done
           
       - name: Change dir
-        run: cd PR-metadata-action
+        run: cd .github
+          
+      - name: Change dir
+        run: cd actionss
           
       - name: Print directory content
         run: ls
