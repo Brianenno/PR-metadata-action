@@ -21,19 +21,9 @@ jobs:
           token: ${{secrets.GITHUB_TOKEN}}
           
       - name: Change dir
-        run: cd ..
-          
-      - name: Change dir
         run: cd .github/actions/
           
-      - name: Print directory content
-        run: ls
-          
-      - name: Change dir
-        run: cd actions
-          
-      - name: Print directory content
-        run: ls
+
            
       - name: Annotate PR
         uses: ./.github/actions/
