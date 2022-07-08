@@ -20,12 +20,17 @@ jobs:
           path: .github/actions/
           token: ${{secrets.GITHUB_TOKEN}}
           
+      - name: Change dir
+        run: cd ..
+          
       - name: Print directory content
-        run: |
-           cd ..
-           ls
-           cd PR-metadata-action
-           ls
+        run: ls
+          
+      - name: Change dir
+        run: cd PR-metadata-action
+          
+      - name: Print directory content
+        run: ls
            
       - name: Annotate PR
         uses: ./.github/actions/
