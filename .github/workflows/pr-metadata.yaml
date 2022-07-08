@@ -6,10 +6,12 @@ on:
       - main
 
 jobs:
-
   annotate-pr:
     runs-on: ubuntu-latest
-    name: Test github nodejs actions
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      packages: write
     
     steps:
       - name: Checkout GitHubNodeJsActions Repo
@@ -23,8 +25,10 @@ jobs:
       - name: Change dir
         run: |
             FILE=/.github/actions/action.yml
-            if test -f "$FILE"; then
+            if [ -f "$FILE" ]; then
                 echo "$FILE exists."
+            else 
+                echo "$FILE does not exist."
             fi
            
       - name: Annotate PR
