@@ -23,14 +23,6 @@ jobs:
       - name: Change dir
         run: cd ..
           
-      - name: Print directory content
-        run: |
-            yourfilenames=`ls ./*`
-            for eachfile in $yourfilenames
-            do
-               echo $eachfile
-            done
-          
       - name: Change dir
         run: cd .github
           
