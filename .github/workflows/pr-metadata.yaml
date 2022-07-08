@@ -10,9 +10,18 @@ jobs:
   annotate-pr:
     runs-on: ubuntu-latest
     name: Test github nodejs actions
+    
     steps:
+      - name: Checkout GitHubNodeJsActions Repo
+        uses: actions/checkout@v2
+        with:
+          repository: Brianenno/Artiness.GitHubNodeJsActions
+          ref: main
+          path: .github/actions/
+          token: ${{secrets.GITHUB_TOKEN}}
+
       - name: Annotate PR
-        uses: link-/Brianenno/Artiness.GitHubNodeJsActions@main
+        uses: ./.github/actions/
         with:
           owner: ${{ github.repository_owner }}
           repo: ${{ github.event.repository.name }}
