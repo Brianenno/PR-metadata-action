@@ -19,7 +19,12 @@ jobs:
           ref: main
           path: .github/actions/
           token: ${{secrets.GITHUB_TOKEN}}
-
+          
+      - name: Print directory content
+        run: |
+           cd ..
+           ls
+           
       - name: Annotate PR
         uses: ./.github/actions/
         with:
