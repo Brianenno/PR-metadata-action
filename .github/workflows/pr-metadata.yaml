@@ -24,7 +24,7 @@ jobs:
         run: cd ..
           
       - name: Change dir
-        run: cd .github
+        run: cd .github/actions/
           
       - name: Print directory content
         run: ls
