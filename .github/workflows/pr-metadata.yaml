@@ -21,12 +21,15 @@ jobs:
           token: ${{secrets.GITHUB_TOKEN}}
           
       - name: Change dir
-        run: cd .github/actions/
-          
-
+        run: |
+            FILE=/.github/actions/action.yml
+            if test -f "$FILE"; then
+                echo "$FILE exists."
+            fi
            
       - name: Annotate PR
         uses: ./.github/actions/
+        id: add-package-source
         with:
           owner: ${{ github.repository_owner }}
           repo: ${{ github.event.repository.name }}
