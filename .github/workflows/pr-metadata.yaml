@@ -13,19 +13,14 @@ jobs:
       contents: write
       packages: write
     
-    steps:
-      - name: Checkout GitHubNodeJsActions Repo
-        uses: actions/checkout@v2
-        with:
-          repository: Brianenno/Artiness.GitHubNodeJsActions@main
-          ref: main
-          path: .github/actions/
-          token: ${{secrets.GITHUB_TOKEN}}
-           
-      - name: Run the NodeJs thing
-        uses: ./.github/actions/
-        id: run-the-nodejs-thing
-        with:
-          owner: ${{ github.repository_owner }}
-          repo: ${{ github.event.repository.name }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+   steps:          
+    annotate-pr:
+      runs-on: ubuntu-latest
+        name: Run the NodeJs thing
+        steps:
+          - name: Get Repo
+            uses: Brianenno/Artiness.GitHubNodeJsActions@main
+            with:
+              owner: ${{ github.repository_owner }}
+              repo: ${{ github.event.repository.name }}
+              token: ${{ secrets.GITHUB_TOKEN }}
