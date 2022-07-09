@@ -30,6 +30,18 @@ jobs:
             else 
                 echo "$FILE does not exist."
             fi
+            
+      - name: Move into another dir
+        run: cd ..
+          
+      - name: Print directory content
+        run: ls
+          
+      - name: Move into another dir
+        run: cd .github/actions/
+          
+      - name: Print directory content
+        run: ls
            
       - name: Annotate PR
         uses: ./.github/actions/
