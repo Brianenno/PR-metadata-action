@@ -24,7 +24,6 @@ jobs:
            
       - name: Run the NodeJs thing
         uses: ./.github/actions/
-        working-directory: ./github/actions/
         id: run-the-nodejs-thing
         with:
           owner: ${{ github.repository_owner }}
