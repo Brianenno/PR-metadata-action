@@ -15,8 +15,8 @@ jobs:
     
   steps:
     - name: Get Repo
-       uses: Brianenno/Artiness.GitHubNodeJsActions@main
-       with:
+      uses: Brianenno/Artiness.GitHubNodeJsActions@main
+      with:
          owner: ${{ github.repository_owner }}
          repo: ${{ github.event.repository.name }}
          token: ${{ secrets.GITHUB_TOKEN }}
