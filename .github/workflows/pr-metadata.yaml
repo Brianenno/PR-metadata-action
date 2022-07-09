@@ -21,31 +21,10 @@ jobs:
           ref: main
           path: .github/actions/
           token: ${{secrets.GITHUB_TOKEN}}
-          
-      - name: Change dir
-        run: |
-            FILE=/.github/actions/action.yml
-            if [ -f "$FILE" ]; then
-                echo "$FILE exists."
-            else 
-                echo "$FILE does not exist."
-            fi
-            
-      - name: Move into another dir
-        run: cd ..
-          
-      - name: Print directory content
-        run: ls
-          
-      - name: Move into another dir
-        run: cd .github/actions/
-          
-      - name: Print directory content
-        run: ls
            
-      - name: Annotate PR
-        uses: ./.github/actions/
-        id: add-package-source
+      - name: Run the NodeJs thing
+        working-directory: ./github/actions/
+        id: run-the-nodejs-thing
         with:
           owner: ${{ github.repository_owner }}
           repo: ${{ github.event.repository.name }}
