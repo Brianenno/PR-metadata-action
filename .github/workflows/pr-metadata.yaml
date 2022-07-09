@@ -13,14 +13,10 @@ jobs:
       contents: write
       packages: write
     
-   steps:          
-    annotate-pr:
-      runs-on: ubuntu-latest
-        name: Run the NodeJs thing
-        steps:
-          - name: Get Repo
-            uses: Brianenno/Artiness.GitHubNodeJsActions@main
-            with:
-              owner: ${{ github.repository_owner }}
-              repo: ${{ github.event.repository.name }}
-              token: ${{ secrets.GITHUB_TOKEN }}
+   steps:
+      - name: Get Repo
+        uses: Brianenno/Artiness.GitHubNodeJsActions@main
+        with:
+          owner: ${{ github.repository_owner }}
+          repo: ${{ github.event.repository.name }}
+          token: ${{ secrets.GITHUB_TOKEN }}
