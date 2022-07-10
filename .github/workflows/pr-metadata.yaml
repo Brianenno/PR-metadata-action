@@ -33,7 +33,7 @@ jobs:
       #  run: cd actions
       - name: Cycle directory content
         run: |
-            search_dir=/home/runner/work/PR-metadata-action/PR-metadata-action/.github/actions/Artiness.GitHubNodeJsActions/
+            search_dir=/home/runner/work/PR-metadata-action/PR-metadata-action/.github/actions/
             for entry in "$search_dir"/*
             do
               echo "$entry"
@@ -43,7 +43,7 @@ jobs:
         run: ls
            
       - name: Annotate PR
-        uses: ./.github/actions/Artiness.GitHubNodeJsActions
+        uses: /home/runner/work/PR-metadata-action/PR-metadata-action/.github/actions/
         with:
           owner: ${{ github.repository_owner }}
           repo: ${{ github.event.repository.name }}
