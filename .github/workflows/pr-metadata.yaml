@@ -31,6 +31,13 @@ jobs:
           
       #- name: Change dir
       #  run: cd actions
+      - name: Cycle directory content
+        run: |
+            search_dir=/home/runner/work/PR-metadata-action/PR-metadata-action/.github/actions/
+            for entry in "$search_dir"/*
+            do
+              echo "$entry"
+            done
           
       - name: Print directory content
         run: ls
