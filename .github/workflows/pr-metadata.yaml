@@ -19,28 +19,6 @@ jobs:
           ref: main
           path: .github/actions/
           token: ${{secrets.GITHUB_TOKEN}}
-          
-      #- name: Change dir
-      #  run: cd ..
-          
-      #- name: Change dir
-      #  run: cd .github
-          
-      #- name: Print directory content
-      #  run: ls
-          
-      #- name: Change dir
-      #  run: cd actions
-      - name: Cycle directory content
-        run: |
-            search_dir=/home/runner/work/PR-metadata-action/PR-metadata-action/.github/actions/
-            for entry in "$search_dir"/*
-            do
-              echo "$entry"
-            done
-          
-      - name: Print directory content
-        run: ls
            
       - name: Annotate PR
         uses: ./.github/actions/
