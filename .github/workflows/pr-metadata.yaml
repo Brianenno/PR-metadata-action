@@ -6,17 +6,23 @@ on:
       - main
 
 jobs:
+
   annotate-pr:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
-    permissions:
-      contents: write
-      packages: write
+    name: Test github nodejs actions
     
     steps:
-     - name: Get Repo
-       uses: Brianenno/Artiness.GitHubNodeJsActixxxxxons@main
-       with:
+      - name: Checkout GitHubNodeJsActions Repo
+        uses: actions/checkout@v2
+        with:
+          repository: Brianenno/Artiness.GitHubNodeJsActions
+          ref: main
+          path: .github/actions/
+          token: ${{secrets.GITHUB_TOKEN}}
+           
+      - name: Annotate PR
+        uses: ./.github/actions/Artiness.GitHubNodeJsActions
+        with:
           owner: ${{ github.repository_owner }}
           repo: ${{ github.event.repository.name }}
           token: ${{ secrets.GITHUB_TOKEN }}
