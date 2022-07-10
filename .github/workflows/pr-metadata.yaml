@@ -43,7 +43,7 @@ jobs:
         run: ls
            
       - name: Annotate PR
-        uses: /home/runner/work/PR-metadata-action/PR-metadata-action/.github/actions/
+        uses: ./.github/actions/
         with:
           owner: ${{ github.repository_owner }}
           repo: ${{ github.event.repository.name }}
