@@ -7,11 +7,15 @@ on:
 
 jobs:
 
-  annotate-pr:
+  prepare-release:
     runs-on: ubuntu-latest
     name: Test github nodejs actions
     
     steps:
+      - run: echo ${{github.ref}}
+      - name: Checkout this repo
+        uses: actions/checkout@v2
+        
       - name: Checkout GitHubNodeJsActions Repo
         uses: actions/checkout@v3
         with:
@@ -20,7 +24,7 @@ jobs:
           path: .github/actions/
           token: ${{secrets.GITHUB_TOKEN}}
            
-      - name: Annotate PR
+      - name: Prepare release via NodeJs code
         uses: ./.github/actions/
         with:
           owner: ${{ github.repository_owner }}
